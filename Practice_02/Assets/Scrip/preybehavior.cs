@@ -23,7 +23,7 @@ public class preybehavior : MonoBehaviour {
     {
         if (col.transform == pred){
             Debug.Log("ni zhuang le wo ni shi bu lie zhe");
-            
+
         }
     }
 }
