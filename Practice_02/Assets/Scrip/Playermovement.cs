@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class Playermovement : MonoBehaviour {
     Vector3 playerPos;
+    Rigidbody myRb;
     // Use this for initialization
     void Start () {
         playerPos = transform.position;
+        myRb = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
 	void Update () {
         Vector3 newPos = playerPos;
-        if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow))
         {
 
-            newPos = playerPos + transform.forward;
+            myRb.AddForce(Vector3.forward*32f);
         }
-        if (Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S)||Input.GetKeyDown(KeyCode.DownArrow))
         {
 
-            newPos = playerPos - transform.forward;
+            myRb.AddForce(Vector3.back * 32f);
         }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
 
-            newPos = playerPos + transform.right;
+            myRb.AddForce(Vector3.right * 32f);
         }
-        if (Input.GetKeyDown(KeyCode.A )||Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A )||Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
-            newPos = playerPos - transform.right;
+            myRb.AddForce(Vector3.left * 32f);
         }
-        transform.position = playerPos;
+
     }
 }
