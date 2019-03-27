@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Playermovement : MonoBehaviour {
     Vector3 playerPos;
     Rigidbody myRb;
@@ -44,7 +45,10 @@ public class Playermovement : MonoBehaviour {
         {
             transform.Rotate(Vector3.up * 16f);
         }
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            myRb.AddForce(Vector3.up * 406f);
+        }
 
     }
     private void OnCollisionEnter(Collision col)
