@@ -17,26 +17,33 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         myAnim.SetInteger("State", 0);
-        if (Input.GetKeyDown(KeyCode.W))
+
+        if (Input.GetKey(KeyCode.W))
         {
             myAnim.SetInteger("State", 1);
         }
+      
+
         if (Input.GetKey(KeyCode.Space))
         {
             myAnim.SetInteger("State", 3);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+      
+        if (Input.GetKey(KeyCode.S))
         {
             myAnim.SetInteger("State", 2);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+       
+        if (Input.GetKey(KeyCode.A))
         {
             myAnim.SetInteger("State", 4);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+       
+        if (Input.GetKey(KeyCode.D))
         {
             myAnim.SetInteger("State", 5);
         }
+      
 
-    }
+    } 
 }
